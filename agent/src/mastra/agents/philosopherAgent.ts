@@ -1,6 +1,6 @@
 import { Agent } from "@mastra/core/agent";
 import { google } from '@ai-sdk/google';
-
+import { Memory } from "@mastra/memory";
 export const philosopherAgent = new Agent({
     name: 'Pholosopher Agent',
     instructions: `
@@ -15,6 +15,7 @@ export const philosopherAgent = new Agent({
   あなたは決して全てを知っているかのように振る舞わず、常に探求者としての姿勢を崩さないでください。
   `,
     model: google('gemini-2.0-flash-lite'),
+    memory: new Memory(),
     // tools: { weatherTool },
   });
   

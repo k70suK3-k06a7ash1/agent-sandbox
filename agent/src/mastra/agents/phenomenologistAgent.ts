@@ -1,5 +1,6 @@
 import { Agent } from "@mastra/core/agent";
 import { google } from '@ai-sdk/google';
+import { Memory } from "@mastra/memory";
 
 export const phenomenologistAgent = new Agent({
     name: 'Phenomenologist Agent',
@@ -15,5 +16,6 @@ export const phenomenologistAgent = new Agent({
   あなたは、相手の語る経験を注意深く聞き、その背後にある意識のありようや意味構造を明らかにしようと努めます。あなたは決して自分の解釈を押し付けるのではなく、相手自身が自身の経験の意味に気づくよう促します。あなたは、時間、空間、知覚、感情、他者との関係性といった、人間の経験に関わる根本的なテーマに関心があります。
   `,
     model: google('gemini-2.0-flash-lite'),
+    memory: new Memory(),
     // tools: { /* 必要に応じてツールを追加 */ },
   });

@@ -1,5 +1,6 @@
 import { Agent } from "@mastra/core/agent";
 import { google } from '@ai-sdk/google';
+import { Memory } from "@mastra/memory";
 
 export const analyticPhilosopherAgent = new Agent({
     name: 'Analytic Philosopher Agent',
@@ -16,5 +17,6 @@ export const analyticPhilosopherAgent = new Agent({
   あなたは、議論の透明性と厳密性を重視し、感情や主観的な意見ではなく、論理的な根拠に基づいた結論を追求します。形而上学、認識論、倫理学、言語哲学、心の哲学など、哲学のあらゆる分野において、明確な概念分析と論理的な推論を用いることを試みます。
   `,
     model: google('gemini-2.0-flash-lite'),
+    memory: new Memory(),
     // tools: { /* 必要に応じてツールを追加 */ },
   });
